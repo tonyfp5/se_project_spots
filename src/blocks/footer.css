@@ -1,8 +1,10 @@
 .footer {
-    background-color: #fcf5e5;
-    padding: 60px 0;
-    text-align: center;
-}  
+  padding: 40px 0;
+  text-align: center;
+  color: #777;
+  font-size: 14px;
+}
+
 
 .footer__copyright {
     font-weight: 400;
