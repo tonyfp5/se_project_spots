@@ -18,7 +18,7 @@
   right: 10px;
   width: 22px;
   height: 22px;
-  background-image: url("../images/delete.svg");
+  background-image: url("../images/deleteIcon.svg");
   background-size: cover;
   cursor: pointer;
   transition: opacity 0.2s;
