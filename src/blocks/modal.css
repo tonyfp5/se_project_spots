@@ -1,5 +1,5 @@
 
-.popup {
+.modal {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
@@ -13,14 +13,14 @@
   transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
 }
 
-.popup_opened {
+.modal_opened {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
 }
 
 
-.popup__container {
+.modal__container {
   max-width: 730px;
   width: 100%;
   background-color: #fff;
@@ -31,7 +31,7 @@
 }
 
 
-.popup__close-button {
+.modal__close-button {
   background-image: url("../images/closeIconBlack.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -47,19 +47,19 @@
   transition: opacity 0.2s ease;
 }
 
-.popup__close-button:hover {
+.modal__close-button:hover {
   opacity: 1;
 }
 
 
-.popup_type_preview .popup__close-button {
+.modal_type_preview .modal__close-button {
   background-image: url("../images/CloseIconwhite.svg");
   top: 0;
   right: -52px;
 }
 
 
-.popup__title {
+.modal__title {
   margin: 0 0 32px;
   font-size: 32px;
   font-weight: 500;
@@ -67,13 +67,13 @@
 }
 
 
-.popup__form {
+.modal__form {
   display: flex;
   flex-direction: column;
   margin-top: 32px;
 }
 
-.popup__input {
+.modal__input {
   font-size: 20px;
   font-weight: 400;
   width: 100%;
@@ -84,33 +84,33 @@
   box-sizing: border-box;
 }
 
-.popup__input:hover {
+.modal__input:hover {
   border-color: #212121;
 }
 
-.popup__input_type_error {
+.modal__input_type_error {
   border: 1px solid rgba(255, 0, 0, 0.6);
 }
 
-.popup__input::placeholder {
+.modal__input::placeholder {
   color: #2121214d;
   font-style: italic;
 }
 
 
-.popup__error {
+.modal__error {
   display: none;
   font-size: 12px;
   color: red;
   margin-top: 8px;
 }
 
-.popup__error_visible {
+.modal__error_visible {
   display: block;
 }
 
 
-.popup__save-button {
+.modal__save-button {
   font-size: 16px;
   width: 156px;
   padding: 18px 0;
@@ -122,27 +122,27 @@
   transition: 0.3s;
 }
 
-.popup__save-button:hover {
+.modal__save-button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.popup__save-button_disabled {
+.modal__save-button_disabled {
   background-color: rgba(33, 33, 33, 0.5);
   cursor: default;
   pointer-events: none;
 }
 
 
-.popup__save-button_type_confirm {
+.modal__save-button_type_confirm {
   width: 100%;
 }
 
 
-.popup__preview-container {
+.modal__preview-container {
   position: relative;
 }
 
-.popup__preview-image {
+.modal__preview-image {
   max-width: 80vw;
   max-height: 80vh;
   width: 100%;
@@ -150,7 +150,7 @@
   border-radius: 8px;
 }
 
-.popup__preview-caption {
+.modal__preview-caption {
   font-size: 20px;
   color: white;
   background-color: #212121;
@@ -162,23 +162,23 @@
 
 
 @media (max-width: 480px) {
-  .popup__container {
+  .modal__container {
     padding: 22px 12px 12px;
   }
 
-  .popup__title {
+  .modal__title {
     font-size: 20px;
   }
 
-  .popup__input {
+  .modal__input {
     font-size: 16px;
   }
 
-  .popup__save-button {
+  .modal__save-button {
     width: 100%;
   }
 
-  .popup_type_preview .popup__close-button {
+  .modal_type_preview .modal__close-button {
     top: -48px;
     right: 0;
   }
