@@ -1,8 +1,8 @@
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 282px);
-  gap: 20px 17px;
-  justify-content: center;
+padding: 20px 0 40px;
+border-bottom: 1px solid rgba(33, 33, 33, 0.4);
+  
+  
 }
 
 .cards__list {

@@ -1,9 +1,12 @@
 .header {
-  padding: 45px 0 40px;
-  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  padding: 10px 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
 }
 
 .header__logo {
-  width: 173px;
-  height: auto;
+  width: 94px;
+  height: 26px;
+  object-fit: contain;
 }
