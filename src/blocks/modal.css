@@ -11,7 +11,9 @@
   align-items: center;
   padding: 10px;
   pointer-events: none;
-  transition: visibility 0.3s, opacity 0.3s ease-in;
+  transition:
+    visibility 0.3s,
+    opacity 0.3s ease-in;
   opacity: 0;
 }
 
@@ -33,6 +35,27 @@
   padding: 36px 50px 32px;
   position: relative;
   box-sizing: border-box;
+  align-items: center;
+  gap: 32px;
+  justify-content: center;
+}
+
+.modal__content {
+  margin: 0 auto;
+  width: 590px;
+  height: 24px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  text-align: center;
+
+  color: #212121;
+  flex: none;
+  order: 0;
+  flex-grow: 1;
 }
 
 .modal__close-button {
@@ -134,7 +157,7 @@
   border: none;
   border-radius: 8px;
   padding: 18px 0;
-  background-color: rgba(255,101,101, 1);
+  background-color: rgba(255, 101, 101, 1);
   color: #fcf5e5;
   cursor: pointer;
   line-height: 1;
@@ -150,6 +173,27 @@
 .modal__submit-button:hover {
   background: rgba(255, 51, 51, 1);
   cursor: pointer;
+}
+
+.modal__cancel-button {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 32px;
+  gap: 8px;
+  width: 156px;
+  height: 52px;
+  border: 1px solid #212121;
+  border-radius: 8px;
+  flex: none;
+  border: 1;
+  flex-grow: 0;
+}
+
+.modal__cancel-button:hover {
+  background-color: rgba(33, 33, 33, 1);
+  color: #fcf5e5;
 }
 
 .modal__image-container {
@@ -213,4 +257,3 @@
     width: 100%;
   }
 }
-
