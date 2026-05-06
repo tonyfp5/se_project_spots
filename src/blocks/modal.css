@@ -29,15 +29,17 @@
 
 .modal__container {
   max-width: 730px;
-  width: 100%;
-  border-radius: 10px;
+  width: 630px;
+  border-radius: 8px;
   background-color: #fff;
-  padding: 36px 50px 32px;
-  position: relative;
+  padding: 32px 20px;
+  position: absolute;
   box-sizing: border-box;
   align-items: center;
   gap: 32px;
   justify-content: center;
+  flex-direction: column;
+
 }
 
 .modal__content {
@@ -57,6 +59,21 @@
   order: 0;
   flex-grow: 1;
 }
+
+.modal__buttons {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 20px;
+width: 332px;
+height: 52px;
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
 
 .modal__close-button {
   background-repeat: no-repeat;
@@ -157,7 +174,7 @@
   border: none;
   border-radius: 8px;
   padding: 18px 0;
-  background-color: rgba(255, 101, 101, 1);
+  background-color:black; 
   color: #fcf5e5;
   cursor: pointer;
   line-height: 1;
@@ -222,7 +239,30 @@
   border-radius: 8px;
 }
 
-@media (max-width: 320px) {
+
+
+.modal__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.modal__buttons .modal__submit-button,
+.modal__buttons .modal__cancel-button {
+  width: 156px;
+}
+
+@media (max-width: 620px) {
+  .modal__buttons {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+
+  .modal__buttons .modal__submit-button,
+  .modal__buttons .modal__cancel-button {
+    width: 100%;
+  }
   .modal__close-button {
     top: 12px;
     right: 12px;
@@ -231,6 +271,7 @@
     font-size: 20px;
     top: -48px;
     right: 0;
+    flex-direction: row;
   }
 
   .modal__image {

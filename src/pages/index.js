@@ -1,5 +1,5 @@
 import "./index.css";
-
+import  {setButtonText} from "../Utils/utils.js";
 import logo from "../images/logo.svg";
 import avatarDefault from "../images/avatar.jpg";
 import pencil from "../images/pencil.svg";
@@ -12,6 +12,7 @@ import {
   resetValidation,
   disableButton,
 } from "../scripts/validation.js";
+
 
 
 
@@ -89,7 +90,6 @@ const previewCaptionEl = previewModal.querySelector(".modal__caption");
 
 const deleteCardModal = document.querySelector("#delete-card-modal");
 const deleteCardForm = deleteCardModal.querySelector(".modal__form");
-const deleteCancelButton = deleteCardModal.querySelector(".modal__cancel-button");
 
 
 const editProfileBtn = document.querySelector(".profile__edit-button");
@@ -105,10 +105,8 @@ const cardLinkInput = document.querySelector("#card-image-input");
 
 const avatarInput = document.querySelector("#avatar-link-input");
 
-
-const deleteCancelBtn = deleteCardModal.querySelector(".modal__cancel-button");
-
-deleteCancelBtn.addEventListener("click", () => {
+const deleteCancelButton = deleteCardModal.querySelector(".modal__cancel-button");
+deleteCancelButton.addEventListener("click", () => {
   closeModal(deleteCardModal);
 });
 
@@ -201,8 +199,11 @@ editProfileForm.addEventListener("submit", (evt) => {
     .finally(() => renderLoading(button, false));
 });
 
+
 newPostForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
+  const button = evt.target.querySelector(".modal__submit-button");
+  setButtonText(button, true, "Save", "Saving...");
 
   api.addCard({
     name: cardNameInput.value,
@@ -213,7 +214,8 @@ newPostForm.addEventListener("submit", (evt) => {
       newPostForm.reset();
       closeModal(newPostModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => setButtonText(button, false, "Save", "Saving..."));
 });
 
 avatarForm.addEventListener("submit", (evt) => {
@@ -230,6 +232,8 @@ avatarForm.addEventListener("submit", (evt) => {
 
 deleteCardForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
+  const button = evt.target.querySelector(".modal__submit-button");
+  setButtonText(button, true, "Delete", "Deleting...");
 
   api.deleteCard(selectedCardId)
     .then(() => {
@@ -238,7 +242,10 @@ deleteCardForm.addEventListener("submit", (evt) => {
       selectedCardId = null;
       closeModal(deleteCardModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => setButtonText(button, false, "Delete", "Deleting..."));
+
+   
 });
 
 

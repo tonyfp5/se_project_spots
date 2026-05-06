@@ -1,10 +1,8 @@
-
 .profile {
   display: flex;
   padding: 34px 0 20px;
   border-bottom: 1px solid rgba(33, 33, 33, 0.4);
 }
-
 
 .profile__avatar-container {
   position: relative;
@@ -20,11 +18,11 @@
 
 .profile__avatar-edit-button {
   position: absolute;
-  bottom: 8px;
-  right: 8px;
-  width: 32px;
-  height: 32px;
-  background-color: #212121;
+  bottom: 12px;
+  height: 16px;
+  width: 111.34px;
+  background-color: rgba(33, 33, 33, 0.7);
+  color: #fff;
   background-image: url("../images/pencil.svg");
   background-size: 60%;
   background-repeat: no-repeat;
@@ -32,11 +30,26 @@
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0;
+  transition: opacity 0.3s;
+  top: 162px;
+  border-radius: 90px;
+  gap: 8px;
+  left: 39px;
+  justify-content: center;
+  display: flex;
+  padding: 0px;
+  align-items: center;
+  left: calc(50% - 111.34px / 2 - 0.33px);
 }
 
 .profile__avatar-edit-button:hover {
   opacity: 1;
+}
+
+.profile__avatar-edit-button::after {
+  content: "Edit avatar";
+  color: #fff;
 }
 
 .profile__info {
@@ -80,7 +93,6 @@
   max-width: 420px;
 }
 
-
 .profile__edit-button {
   margin-top: auto;
   display: flex;
@@ -99,7 +111,6 @@
 .profile__edit-button:hover {
   opacity: 1;
 }
-
 
 .profile__add-button {
   margin-left: auto;
