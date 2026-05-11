@@ -163,7 +163,15 @@
     max-width: 288px;
   }
 
+  .profile__column {
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
   .profile__add-button {
+    margin: 0;
     width: 100%;
     max-width: 288px;
   }

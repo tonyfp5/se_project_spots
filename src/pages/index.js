@@ -110,6 +110,16 @@ deleteCancelButton.addEventListener("click", () => {
   closeModal(deleteCardModal);
 });
 
+const deleteConfirmButton = deleteCardModal.querySelector(".modal__delete-button");
+deleteConfirmButton.addEventListener("click", () => {
+  api.deleteCard(selectedCardId)
+    .then(() => {
+      selectedCard.remove();
+      closeModal(deleteCardModal);
+    })
+    .catch(console.error);
+});
+
 
 const cardsList = document.querySelector(".cards__list");
 
@@ -196,7 +206,7 @@ editProfileForm.addEventListener("submit", (evt) => {
       closeModal(editProfileModal);
     })
     .catch(console.error)
-    .finally(() => renderLoading(button, false));
+    .finally(() => renderLoading(editProfileBtn, false));
 });
 
 
@@ -230,9 +240,9 @@ avatarForm.addEventListener("submit", (evt) => {
     .catch(console.error);
 });
 
-deleteCardForm.addEventListener("submit", (evt) => {
+deleteCardForm.addEventListener("button", (evt) => {
   evt.preventDefault();
-  const button = evt.target.querySelector(".modal__submit-button");
+  const button = evt.target.querySelector(".modal__delete-button");
   setButtonText(button, true, "Delete", "Deleting...");
 
   api.deleteCard(selectedCardId)
