@@ -197,6 +197,10 @@ function renderCards(cards) {
 editProfileForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
 
+  const button = evt.submitter;
+
+  renderLoading(button, true, "Saving...", "Save");
+
   api.updateUserInfo({
     name: nameInput.value,
     about: aboutInput.value,
@@ -206,14 +210,18 @@ editProfileForm.addEventListener("submit", (evt) => {
       closeModal(editProfileModal);
     })
     .catch(console.error)
-    .finally(() => renderLoading(editProfileBtn, false));
+    .finally(() => {
+      renderLoading(button, false, "Saving...", "Save");
+    });
 });
 
 
 newPostForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  const button = evt.target.querySelector(".modal__submit-button");
-  setButtonText(button, true, "Save", "Saving...");
+
+  const button = evt.submitter;
+
+  renderLoading(button, true, "Saving...", "Save");
 
   api.addCard({
     name: cardNameInput.value,
@@ -225,11 +233,17 @@ newPostForm.addEventListener("submit", (evt) => {
       closeModal(newPostModal);
     })
     .catch(console.error)
-    .finally(() => setButtonText(button, false, "Save", "Saving..."));
+    .finally(() => {
+      renderLoading(button, false, "Saving...", "Save");
+    });
 });
 
 avatarForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
+
+  const button = evt.submitter;
+
+  renderLoading(button, true, "Saving...", "Save");
 
   api.updateAvatar(avatarInput.value)
     .then((data) => {
@@ -237,13 +251,19 @@ avatarForm.addEventListener("submit", (evt) => {
       avatarForm.reset();
       closeModal(avatarModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      renderLoading(button, false, "Saving...", "Save");
+    });
 });
 
-deleteCardForm.addEventListener("button", (evt) => {
+
+deleteCardForm.addEventListener("submit", (evt) => {
   evt.preventDefault();
-  const button = evt.target.querySelector(".modal__delete-button");
-  setButtonText(button, true, "Delete", "Deleting...");
+
+  const button = evt.submitter;
+
+  renderLoading(button, true, "Deleting...", "Delete");
 
   api.deleteCard(selectedCardId)
     .then(() => {
@@ -253,9 +273,9 @@ deleteCardForm.addEventListener("button", (evt) => {
       closeModal(deleteCardModal);
     })
     .catch(console.error)
-    .finally(() => setButtonText(button, false, "Delete", "Deleting..."));
-
-   
+    .finally(() => {
+      renderLoading(button, false, "Deleting...", "Delete");
+    });
 });
 
 
@@ -299,8 +319,9 @@ api.getAppInfo()
   })
   .catch(console.error);
 
-function renderLoading(button, isLoading, defaultText = "Save") {
-  if (!button) return;
 
-  button.textContent = isLoading ? "Saving..." : defaultText;
+
+function renderLoading(button, isLoading, loadingText, defaultText) {
+  if (!button) return;
+  button.textContent = isLoading ? loadingText : defaultText;
 }
