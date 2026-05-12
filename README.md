@@ -1,21 +1,46 @@
-# Project 3: Spots
+Project: Spots
+This project is an interactive photo‑sharing application where users can edit their profile information, update their avatar, add new cards, like cards, delete their own cards, and view images in a preview popup.
+The project is built using HTML, CSS, JavaScript, and Webpack, following the BEM methodology and the modular structure taught in TripleTen.
 
-### Overview  
+ - Project Objectives
+Practice working with asynchronous JavaScript and API requests.
 
-* Intro  
-* Figma  
-* Images  
-  
-**Intro**
-  
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
-  
-**Figma**  
-  
-* [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-  
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+Implement modular code structure using ES6 modules.
+
+Apply BEM for CSS organization.
+
+Build and manage interactive UI components.
+
+Implement form validation.
+
+Work with Webpack for bundling and asset management.
+
+Strengthen understanding of event handling, DOM manipulation, and state updates.
+
+- Technologies Used..
+
+HTML5
+
+CSS 
+
+JavaScript (ES6 Modules)
+
+Webpack
+
+REST API
+
+Git & GitHub
+
+API
+
+The API provides:
+
+User information
+
+Initial cards
+
+Endpoints for updating profile and avatar
+
+Endpoints for adding, deleting, and liking cards
+
+All API interactions are handled in the Api.js class.
